@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+    //prototype 和 call 函数
+        function baseClass(){
+            this.showMsg = function(){
+                alert("1_baseClass_showMsg");
+            };
+            this.baseShowMsg = function(){
+                alert("2_baseClass_baseShowMsg");
+
+            }
+        }
+
+        baseClass.showMsg = function (){
+            alert("3_baseClass.showMsg");
+        };
+
+        function extendClass(){
+            this.showMsg = function (){
+                alert("4_extendClass_showMsg");
+            }
+        }
+
+        extendClass.showMsg = function (){
+            alert("5_extendClass.showMsg");
+        };
+
+        extendClass.prototype = new baseClass();
+
+        var instance = new extendClass();
+
+        instance.showMsg();//extendClass_showMsg
+
+        instance.baseShowMsg();//baseClass_baseShowMsg
+
+        instance.showMsg();//extendClass_showMsg
+
+        baseClass.showMsg.call(instance);//baseClass.showMsg
+
+        var baseinstance = new baseClass();
+
+        baseinstance.showMsg.call(instance);//baseClass_showMsg
+    </script>
+
+    <script>
+        //Array.of()的polyfill
+        if (!Array.of){
+            Array.of = function(){
+                return Array.prototype.slice.call(arguments);
+            }
+        }
+    </script>
+
+    <!--js w3school-->
+    <script>
+        //一个好的变成习惯是，在代码开始处，统一对需要变量进行声明
+
+        /*重新声明变量*/
+        var qingke="plam";
+        var qingke;
+        console.log(qingke);//plam
+
+        /*js中的名词：
+        * 标识符:变量、函数、函数参数、对象的名字
+        * 运算符:+（加值）、-（减值）、=（赋值）、比较运算符、逻辑运算符、条件运算符、
+        * 标签引用
+        * 语句:return语句、条件语句（if else && switch）、break用于跳出循环,跳出循环后继续执行循环之后的代码（如果有的话）、continue用于跳过循环中的一个迭代
+        * 对象
+        * 数组
+        * 变量
+        **/
+
+        /*在JS中对象是数据，拥有属性和方法，
+        *在面向对象语言中，属性和方法常被称为对象的成员
+        * */
+
+        //当像这样声明一个变量时：
+        var txt = "Hello";
+        //实际上已经创建了一个字符串对象，它有内建的length属性，
+
+        /*访问对象属性*/
+        var obj = {
+            name:"zhao",
+            age:27,
+            0:"bi",
+            1:{}
+        };
+        console.log(obj.name);//第一种方式
+        console.log(obj["name"]);//第二种方式[],需要用双引号包裹属性名
+
+        /*函数是由事件驱动的或者当它被调用时执行的可重复使用的代码块*/
+        /*在使用return语句时，函数回停止执行，并返回指定的值*/
+
+        /*JS变量的生存期：JS变量的生命期是从它们被声明的时间开始。局部变量会在函数运行以后被删除，全局变量会在页面关闭后被删除*/
+
+        //switch 是条件判断语句
+        //这里要注意使用break阻止代码自动向下一个case运行;
+        var day = new Date().getDay(),x;
+        switch (day){
+            case 0:x = "Sunday";
+                break;
+            case 1:x = "Monday";
+                break;
+            case 2:x = "Tuesday";
+                break;
+            case 3:x = "Wednesday";
+                break;
+            case 4:x = "Thursday";
+                break;
+            case 5:x = "Friday";
+                break;
+            case 6:x = "Saturday Sat";
+                break;
+            default:x= "Data Error!";
+        }
+
+        var cars = ['奔驰','宝马','火箭'];
+        //JS 循环:for循环、for/in循环、while循环、do/while循环
+        // 1、for循环：循环代码块一定的次数
+        for(var i = 0;i<cars.length;i++){
+            document.write(cars[i] + "<br>");
+        }
+        // 2、for/in循环：循环遍历对象的属性
+        var person = {
+            lastName:"赵",
+            firstName:"碧洋",
+            age:"27"
+        },pp='';
+        for(x in person){
+            pp=pp + person[x];
+        }
+        // 3、while循环：当指定条件为true时循环指定的代码块
+        var i = 0;
+        while(i<6){
+            console.log(i);
+            i++;
+        }
+        // 4、do/while循环：同样当指定条件为true时循环制定的代码块
+        //至少执行一次
+        var j=1;
+        do{
+            console.log(j);
+            j++;
+        }
+        while(j<10);
+
+        //try语句测试代码块的错误
+        //catch语句处理错误
+        //throw语句创建自定义错误
+
+        function message(){
+            try{
+                //在这里运行代码
+                alert(ok);
+            }catch(err){
+                //在这里处理错误
+                var txt = "ok没有定义？\n\n";
+                txt += "错误的信息："+err.message+"\n\n";
+                alert(txt);
+            }
+        }
+        //绝对不要在文档加载之后使用document.write();这会覆盖该文档
+
+        //JS中所有的事物都是对象：字符串、数值、数组、函数
+        //创建和存储cookie
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数</title>
+</head>
+<body>
+<script>
+    /*
+    * reduce
+    * */
+    function string2int(s){
+        const arr = s.split('').filter(a => !isNaN(a)).map(d => 1*d);
+        const res = arr.length && arr.reduce((x,y) => {
+                    return x*10+y;
+        });
+        return res;
+    }
+
+    /*
+    * 闭包
+    * 高阶函数除了可以接受函数
+    * */
+    function sum(arr){
+        return arr.reduce(function (x,y){});
+    }
+</script>
+</body>
+</html>
