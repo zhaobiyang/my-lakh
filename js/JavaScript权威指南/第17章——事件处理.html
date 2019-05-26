@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li><img src="../img/1.png" alt=""></li>
+    <li><img src="../img/2.png" alt=""></li>
+    <li><img src="../img/3.png" alt=""></li>
+    <li><img src="../img/4.png" alt=""></li>
+    <li><img src="../img/5.png" alt=""></li>
+</ul>
+<script >
+    window.onload = function(){
+        //找到文档中所有的<img>标签
+        var images= document.getElementsByTagName('img');
+        //遍历images,给每个节点的“click”事件添加事件处理程序
+        //再点击图片的时候将图片隐藏
+        for(var i=0;i<images.length;i++){
+            var image = images[i];
+            if(image.addEventListener){
+                image.addEventListener("click",hide,false);
+            }else{
+                image.attachEvent("click",hide);
+            }
+        }
+        //这便是上面注册的事件处理函数
+        function hide(event){event.target.style.visibility = "hidden"}
+    };
+</script>
+</body>
+</html>

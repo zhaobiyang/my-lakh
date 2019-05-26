@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字符串</title>
+</head>
+<body>
+<script>
+    /*
+    * 字符串常用API（字符串是不可变的，引用字符串的方法都只是返回一个新的字符串）
+    * */
+    //多行字符串&ES5用\n  |ES6用``包裹
+    var str1 = `赵碧洋
+    林鹏雕
+    `;
+    console.log(str1);
+
+    //ES6模板字符串
+    var name = "Beyond";
+    var age = 27;
+    var message = `Hello ${name},你今年${age}岁了吧`;
+
+    //length属性
+    console.log(message.length);
+
+    //toUpperCase
+    console.log(message.toUpperCase());
+
+    //toLowerCase
+    console.log(message.toLowerCase());
+
+    //indexOf
+    console.log(message.indexOf("B"));
+
+    //substring
+    console.log(message.substring(0,3));
+
+
+</script>
+</body>
+</html>

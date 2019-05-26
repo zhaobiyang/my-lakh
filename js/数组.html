@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组</title>
+</head>
+<body>
+<script>
+    var funPortBg = [
+        '#5AC8E1',
+        '#91C559',
+        '#31CACF',
+        '#58C598',
+        '#5AC6DD',
+        '#D16034',
+        '#F8BC0F',
+        '#F8BC0F',
+        '#6CC29D',
+        '#8ABD54',
+        '#2FC5CA',
+        '#6CC29D',
+        '#DD5A7C',
+        '#D18934',
+        '#F8970F',
+        '#F17035',
+        '#4FC797',
+        '#5AC8E1',
+        '#91C559',
+        '#31CACF',
+        '#58C598',
+        '#30C9CE',
+        '#D16034',
+        '#F8BC0F',
+        '#58C598',
+        '#91C559',
+        '#57C497',
+        '#5AC8E1',
+        '#6CC29D',
+        '#DD5A7C',
+        '#D18934',
+        '#F8970F',
+        '#F17035',
+        '#5AC8E1'
+    ];
+
+    /*
+    * 不改变原数组的方法
+    * */
+    //length    &&:数组长度
+    console.log("length:"+funPortBg.length);
+    //indexOf    &&:元素位置，没有找到返回-1
+    console.log("indexOf:"+funPortBg.indexOf('#91C559'));
+    //slice    &&:一个新的数组
+    console.log("slice:"+funPortBg.slice(2,3));
+    //contact    &&:新数组
+    console.log("contact:"+funPortBg.concat(["red","blue"]));
+    //join
+    console.log("join:"+funPortBg.join("@@"));
+
+    /*
+    * 改变原数组的方法
+    * */
+    //sort
+    console.log("sort:"+funPortBg.sort());
+    console.log("funPortBg: "+funPortBg);
+    //reverse
+    console.log("reverse: "+funPortBg.reverse());
+    console.log("funPortBg: "+funPortBg);
+    //splice
+    console.log("splice:"+funPortBg.splice(0,34,"red,green,blue"));
+    console.log("funPortBg:"+funPortBg);
+
+    //push
+    console.log(funPortBg.length);
+    console.log("push: " +funPortBg.push(["zhao","bi","yang"]));
+
+    //pop
+    console.log("pop: " +funPortBg.pop());
+
+    //unshift
+    console.log(funPortBg);
+    console.log("unshift: "+funPortBg.unshift('wo','shi',"赵碧洋"));
+
+    //shift
+    console.log("shift: "+funPortBg.shift());
+
+
+</script>
+</body>
+</html>
